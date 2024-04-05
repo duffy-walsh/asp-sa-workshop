@@ -2,9 +2,6 @@
 db.people.insertOne({name : "Joe", company : "MongoDB"})
 
 
-//document for stream processor
-db.data.insertOne({name : "Joe"})
-
 s = {
   $source:  {
       connectionName: 'jsncluster0',
@@ -31,3 +28,6 @@ l = {
 }
 
 sp.process([s,l])
+
+//document for stream processor
+db.data.insertOne({name : "Joe"})
